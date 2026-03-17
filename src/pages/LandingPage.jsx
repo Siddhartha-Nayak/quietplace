@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Leaf } from 'lucide-react';
+import { Share2 } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Input } from '../components/ui/input';
 import { Card } from '../components/ui/card';
@@ -13,7 +13,7 @@ export default function LandingPage() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const savedName = localStorage.getItem('quiet_place_name');
+    const savedName = localStorage.getItem('convo_sharing_name');
     if (savedName) setName(savedName);
   }, []);
 
@@ -21,7 +21,7 @@ export default function LandingPage() {
     e.preventDefault();
     if (!name.trim()) return;
 
-    localStorage.setItem('quiet_place_name', name.trim());
+    localStorage.setItem('convo_sharing_name', name.trim());
 
     if (mode === 'join' && roomCode.trim()) {
       navigate(`/room/${roomCode.trim()}`);
@@ -48,13 +48,13 @@ export default function LandingPage() {
             transition={{ delay: 0.2, type: 'spring', stiffness: 200 }}
             className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-3xl bg-white shadow-xl shadow-brand-500/10 dark:bg-zinc-900 dark:shadow-brand-900/20"
           >
-            <Leaf className="h-8 w-8 text-brand-500" strokeWidth={1.5} />
+            <Share2 className="h-8 w-8 text-brand-500" strokeWidth={1.5} />
           </motion.div>
-          <h1 className="mb-3 text-3xl font-light tracking-tight text-zinc-800 dark:text-zinc-100">
-            Quiet Place
+          <h1 className="mb-3 text-4xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">
+            Convo Sharing
           </h1>
           <p className="text-sm font-medium text-zinc-500 dark:text-zinc-400">
-            A private space for special conversations.
+            Secure, instant, and private conversations.
           </p>
         </div>
 

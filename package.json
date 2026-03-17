@@ -1,7 +1,7 @@
 {
-  "name": "quietplaceE",
+  "name": "convo-sharing",
   "version": "1.0.0",
-  "description": "Quiet Place: Private invite-only chat app with Firebase",
+  "description": "Convo Sharing: Secure and private chat application",
   "main": "index.js",
   "scripts": {
     "dev": "vite",

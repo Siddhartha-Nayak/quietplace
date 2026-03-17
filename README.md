@@ -1,14 +1,14 @@
-=======
-# Quiet Place 🌿
+# Convo Sharing 🚀
 
-A private, invite-only messaging web application built with React, Tailwind CSS v4, and Firebase.
+A private, secure, and instant messaging web application with ShareX-inspired aesthetics. Built with React, Tailwind CSS v4, and Firebase.
 
 ## Features
-- **Secret Codes**: No accounts. Join or create rooms via unique codes.
-- **Real-time Chat**: Powered by Firestore.
-- **Media Sharing**: Drag and drop or select images/files to share (Firebase Storage).
-- **Premium UI**: Glassmorphism, smooth animations, and warm aesthetics.
-- **Customizable**: Dark/Light mode toggle and sound notifications.
+- **Instant Rooms**: No accounts required. Join or create rooms via unique codes.
+- **Real-time Chat**: Powered by Firestore for instantaneous messaging.
+- **Media Sharing**: Easily share images and files (Firebase Storage support).
+- **ShareX Theme**: Clean, sleek, and high-performance UI.
+- **Micro-interactions**: Framer Motion powered animations for a premium feel.
+- **Dark Mode**: Fully responsive dark and light theme support.
 
 ## 🚀 Setup Instructions
 
@@ -18,8 +18,8 @@ A private, invite-only messaging web application built with React, Tailwind CSS 
 3. Add a **Web App** to your project.
 4. Copy the Firebase configuration object.
 5. In the **Build** menu:
-   - Enable **Firestore Database** in test mode or with rules restricting access by `roomId`.
-   - Enable **Storage** in test mode.
+   - Enable **Firestore Database** (test mode or specific rules).
+   - Enable **Storage** (test mode).
 
 ### 2. Environment Variables
 1. Create a `.env` file in the root directory.
@@ -32,14 +32,10 @@ npm run dev
 ```
 
 ### 4. Deployment
-The app is ready for Firebase Hosting.
 ```bash
 npm run build
-# Then deploy using firebase-tools
+# Deploy using your preferred hosting service or Firebase Hosting
 ```
 
-## 🔐 Security Note
-Ensure your Firestore rules check for the existence of the `roomId` in the message path to maintain privacy.
-=======
-# quietplace
-
+## 🔐 Privacy
+This app uses unique room IDs for private routing. Ensure your Firebase Security Rules are configured to protect data based on your specific privacy requirements.

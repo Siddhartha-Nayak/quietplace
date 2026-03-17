@@ -1,9 +1,9 @@
-# Git Fix & Project Setup TODO
+# Convo Sharing TODO
 
 ## Approved Plan Steps (from analysis)
 
 ### 1. Fix Git (Remote/Push)
-- [ ] Confirm/create GitHub repo `Siddhartha-Nayak/quietplaceE`
+`Siddhartha-Nayak/convo-sharing`
 - [x] Rename local branch master → main: `git branch -M main`
 - [pending] Push: `git push -u origin main` (cancelled auth dialog; create repo & retry)
 
@@ -12,12 +12,12 @@
 - [ ] Verify .env ignored in .gitignore
 
 ### 3. Test Project
-- [ ] `npm install`
-- [ ] `npm run dev`
-- [ ] Open localhost:5173, test chat/landing
+- [x] `npm install --legacy-peer-deps` (success)
+- [starting] `npm run dev`
+- [ ] Open localhost:5173, test chat/landing (needs .env Firebase config)
 
 ### 4. Polish
-- [ ] Update package.json name to 'quietplaceE'?
-- [ ] Commit/push further changes
+- [x] Update package.json name to 'convo-sharing'
+- [ ] Commit/push further changes (after repo create)
 
 *Progress tracked here. Mark [x] as complete.*

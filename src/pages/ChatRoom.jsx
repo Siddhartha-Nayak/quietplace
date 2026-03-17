@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Send, Image as ImageIcon, File, Paperclip, LogOut, Moon, Sun, Volume2, VolumeX } from 'lucide-react';
+import { Send, Image as ImageIcon, File, Paperclip, LogOut, Moon, Sun, Volume2, VolumeX, Share2 } from 'lucide-react';
 import { collection, addDoc, query, orderBy, onSnapshot, serverTimestamp } from 'firebase/firestore';
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import { db, storage } from '../lib/firebase';
@@ -24,7 +24,7 @@ export default function ChatRoom() {
   const notifySound = useRef(new Audio('https://assets.mixkit.co/active_storage/sfx/2354/2354-preview.mp3'));
 
   useEffect(() => {
-    const savedName = localStorage.getItem('quiet_place_name');
+    const savedName = localStorage.getItem('convo_sharing_name');
     if (!savedName) {
       navigate('/');
       return;
@@ -126,12 +126,12 @@ export default function ChatRoom() {
       {/* Header */}
       <header className="flex h-16 shrink-0 items-center justify-between border-b border-zinc-200/50 bg-white/80 px-6 backdrop-blur-md dark:border-zinc-800/50 dark:bg-zinc-900/80">
         <div className="flex items-center gap-4">
-          <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-brand-50 text-brand-500 dark:bg-brand-900/20 dark:text-brand-400">
-            <span className="font-semibold uppercase">{roomId?.slice(0, 2)}</span>
+          <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-brand-500 text-white shadow-lg shadow-brand-500/20">
+            <Share2 className="h-5 w-5" />
           </div>
           <div>
-            <h2 className="text-sm font-semibold tracking-tight text-zinc-900 dark:text-zinc-100">Room: {roomId}</h2>
-            <p className="text-xs text-zinc-500 dark:text-zinc-400">Secure connection</p>
+            <h2 className="text-sm font-bold tracking-tight text-zinc-900 dark:text-zinc-100">Convo: {roomId}</h2>
+            <p className="text-xs font-medium text-brand-500">Secure connection</p>
           </div>
         </div>
 
