@@ -5,7 +5,7 @@
 ### 1. Fix Git (Remote/Push)
 `Siddhartha-Nayak/convo-sharing`
 - [x] Rename local branch master → main: `git branch -M main`
-- [pending] Push: `git push -u origin main` (cancelled auth dialog; create repo & retry)
+- [x] Push: `git push -u origin main` (successfully pushed to origin)
 
 ### 2. Firebase/.env (User: confirmed setup)
 - [ ] Copy .env.example → .env, fill VITE_FIREBASE_* vars
