@@ -1,7 +1,7 @@
 {
   "name": "convo-sharing",
   "version": "1.0.0",
-  "description": "Convo Sharing: Secure and private chat application",
+  "description": "Secure, instant, and private",
   "main": "index.js",
   "scripts": {
     "dev": "vite",

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Share2 } from 'lucide-react';
+import { Share2, Moon, Sun } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Input } from '../components/ui/input';
 import { Card } from '../components/ui/card';
@@ -12,10 +12,25 @@ export default function LandingPage() {
   const [mode, setMode] = useState('join');
   const navigate = useNavigate();
 
+  const [isDark, setIsDark] = useState(false);
+
   useEffect(() => {
     const savedName = localStorage.getItem('convo_sharing_name');
     if (savedName) setName(savedName);
+
+    // Initial theme check
+    if (document.documentElement.classList.contains('dark')) {
+      setIsDark(true);
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      setIsDark(true);
+      document.documentElement.classList.add('dark');
+    }
   }, []);
+
+  const toggleTheme = () => {
+    setIsDark(!isDark);
+    document.documentElement.classList.toggle('dark');
+  };
 
   const handleAction = (e) => {
     e.preventDefault();
@@ -32,8 +47,14 @@ export default function LandingPage() {
   };
 
   return (
-    <div className="flex min-h-screen items-center justify-center p-4 selection:bg-brand-500/30">
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-brand-100/50 via-zinc-50 to-zinc-50 dark:from-brand-900/20 dark:via-zinc-950 dark:to-zinc-950"></div>
+    <div className="relative flex min-h-screen items-center justify-center p-4 selection:bg-brand-500/30">
+      <div className="absolute top-6 right-6 z-20">
+        <Button variant="ghost" size="icon" onClick={toggleTheme} className="rounded-full">
+          {isDark ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5 text-zinc-600" />}
+        </Button>
+      </div>
+
+      <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-brand-100/50 via-zinc-50 to-zinc-50 dark:from-brand-900/10 dark:via-zinc-950 dark:to-zinc-950"></div>
       
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -54,7 +75,7 @@ export default function LandingPage() {
             Convo Sharing
           </h1>
           <p className="text-sm font-medium text-zinc-500 dark:text-zinc-400">
-            Secure, instant, and private conversations.
+            Secure, instant, and private.
           </p>
         </div>
 

@@ -1,6 +1,6 @@
 # Convo Sharing 🚀
 
-A private, secure, and instant messaging web application with ShareX-inspired aesthetics. Built with React, Tailwind CSS v4, and Firebase.
+Secure, instant, and private. Built with React, Tailwind CSS v4, and Firebase.
 
 ## Features
 - **Instant Rooms**: No accounts required. Join or create rooms via unique codes.
