@@ -1,3 +1,4 @@
+=======
 # Quiet Place 🌿
 
 A private, invite-only messaging web application built with React, Tailwind CSS v4, and Firebase.
@@ -39,3 +40,6 @@ npm run build
 
 ## 🔐 Security Note
 Ensure your Firestore rules check for the existence of the `roomId` in the message path to maintain privacy.
+=======
+# quietplace
+
